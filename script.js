@@ -12,6 +12,7 @@ textosalida.onchange = cambio;
 
 function encriptar() {
     var texto = textoentrada.value;
+    texto = texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     texto = texto.replaceAll("e", "enter");
     texto = texto.replaceAll("i", "imes");
     texto = texto.replaceAll("a", "ai");
@@ -23,6 +24,7 @@ function encriptar() {
 
 function desencriptar() {
     var texto = textoentrada.value;
+    texto = texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     texto = texto.replaceAll("enter", "e");
     texto = texto.replaceAll("imes", "i");
     texto = texto.replaceAll("ai", "a");
