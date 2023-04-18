@@ -20,6 +20,7 @@ function encriptar() {
     texto = texto.replaceAll("u", "ufat");
     textosalida.value = texto;
     cambio();
+    textoentrada.value = "";
 }
 
 function desencriptar() {
@@ -32,6 +33,7 @@ function desencriptar() {
     texto = texto.replaceAll("ufat", "u");
     textosalida.value = texto;
     cambio();
+    textoentrada.value = "";
 }
 
 function cambio() {
@@ -44,7 +46,7 @@ function cambio() {
                 element.style.display = "block"
             }
         });
-    }else{        
+    } else {
         nada.style.opacity = "1";
         datossal.forEach(element => {
             element.style.opacity = "0";
@@ -58,7 +60,7 @@ function cambio() {
 function copiarsalida() {
     navigator.clipboard.writeText(textosalida.value)
         .then(() => {
-            console.log('Texto copiado al portapapeles')
+            alert('Texto copiado al portapapeles')
         })
         .catch(err => {
             console.error('Error al copiar al portapapeles:', err)
